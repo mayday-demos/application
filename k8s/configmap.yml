@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: application-configmap
+  namespace: bnl-project
+data:
+  DYNAMIC_STRING: k8s dynamic string

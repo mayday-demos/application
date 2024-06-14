@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+  namespace: bnl-project
+  labels:
+    app: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application
+  template:
+    metadata:
+      labels:
+        app: application
+    spec:
+      containers:
+      - name: application
+        image: docker.io/mayday24/bnl-application:0.1.2
+        ports:
+        - containerPort: 8080
+        env:
+         - name: DYNAMIC_STRING
+           valueFrom:
+             configMapKeyRef:
+              name: application-configmap
+              key: DYNAMIC_STRING      
