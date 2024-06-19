@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: application
-        image: docker.io/mayday24/bnl-application:1.0.0
+        image: docker.io/mayday24/bnl-application:1.0.1
         ports:
         - containerPort: 8080
         env:
