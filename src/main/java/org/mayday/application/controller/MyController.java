@@ -11,7 +11,7 @@ public class MyController {
     @Autowired
     private MyConfig myConfig;
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String getDynamicString() {
         return myConfig.getDynamicString();
     }
